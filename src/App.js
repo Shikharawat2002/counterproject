@@ -8,9 +8,13 @@ function App() {
 
   function addCounter()
   {
-    counter = counter+1;
-    setCounter(counter)
-    console.log(counter)
+    if(counter>19)
+    {
+      setCounter(counter)
+    }
+    else{
+      setCounter(counter+1)
+    }
   }
 
   function removeCounter(){
@@ -19,13 +23,17 @@ function App() {
 
   function subtractCounter()
   {
+    if(counter>0){
     setCounter(counter-1)
+    }
+    else
+    setCounter(counter)
   }
 
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Counter Project</h1>   
+        <h1>Counter Project range(0-20)</h1>   
         <p>Counter Value:- {counter} </p>     
         <button onClick={addCounter}>Add value </button>
         <button onClick={subtractCounter}>subtract value</button>
